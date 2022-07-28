@@ -30,17 +30,6 @@ function ramenInfo(ramen) {
     rating.textContent = ramen.rating
     const comment = document.getElementById('comment-display')
     comment.textContent = ramen.comment
-    let button = document.createElement('button')
-    button.textContent = 'Delete'
-    let h2 = document.createElement('h2')
-    name.append(h2)
-    h2.append(button)
-    button.addEventListener('click', () => handleDelete(ramen))
-}
-function handleDelete(ramen) {
-    let filteredRamens = ramensArray.filter(ramenObj => ramenObj.id !== ramen.id)
-    renderRamens(filteredRamens).slice(0, -1)
-
 }
 ramenForm.addEventListener('submit', (e) => {
     e.preventDefault()
